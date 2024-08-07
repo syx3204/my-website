@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>宋泳贤的个人网页</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- <div id = "background-main" ></div> -->
+
+    <style>
+        /*<!--#background-main {
+            background: #1f1815;
+            opacity: 0.2;
+            position: fixed; 
+            bottom: 0; 
+            left: 0;
+            right: 0; 
+            height: 50px; 
+            float: left;
+            width: 500px;
+            z-index: 100; 
+        }*/
+        .aplyer{
+            mini: false; 
+            autoplay: false; 
+            theme: '#FADFA3'; 
+            loop: 'all'; 
+            order: 'random'; 
+            preload: 'auto'; 
+            volume: 0.7; 
+            mutex: true; 
+            listFolded: false; 
+            listMaxHeight: 90; 
+            lrcType: 3; 
+ 
+ 
+ 
+        }
+        .header h1{
+            text-align: center;
+        }
+        .header h2{
+            text-align: center;
+        }
+        .main h1{
+            position: fixed;
+            text-align: center;
+        }
+        html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        }
+        
+        .satic-area {
+        position: fixed;
+        z-index: -50;
+        width: 100%;
+        height: 100%;
+        background: url(img/poster-about.jpg) no-repeat center;
+        background-size: cover;
+        }
+        
+        .dynamic-area1   {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url(img/poster-drop-animate2.png) repeat-x 0px 0px;
+        background-size: cover;
+        animation: posterDrop1 6000s linear infinite;
+        }
+        
+        @keyframes posterDrop1 {
+        from { background-position: 0 0; }
+        to { background-position: 4000% 0; }
+        }
+        
+        .dynamic-area2   {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url(img/poster-drop-animate1.png) repeat-x 0px 0px;
+        background-size: cover;
+        animation: posterDrop2 8000s linear infinite;
+        }
+        
+        @keyframes posterDrop2 {
+        from { background-position: 0 0; }
+        to { background-position: 30000% 0; }
+        }  
+        
+        
+        
+        .email-div {
+            font-size: 30px;
+            backdrop-filter: blur(3px);
+            margin: 10px auto;
+            background-color: black;
+            text-align: center;
+            border-radius: 10px;
+            height: 50px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            opacity: 0.8;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .email-div:hover {
+
+            transform:scale(1.005);
+            opacity: 1;
+            
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            background-color: #333;
+
+        }
+
+        .email-div:active {
+            background-color: #555;
+        }
+
+        .email-div p {
+            margin: 0;
+        }
+
+        .one{
+            position: fixed;
+        }
+
+        
+
+        /* 新增留言模块样式 */
+        .message-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            z-index: 100;
+        }
+
+        .message-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.581);
+            border-radius: 10px;
+        }
+
+        .message-header {
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <div class="satic-area">
+        <div class="dynamic-area1"></div>
+        <div class="dynamic-area2"></div>
+    </div>  
+
+    <!-- Header -->
+    <header id="header">
+        <div class="inner">
+            <a class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+            <h1><strong>宋泳贤</strong></h1>
+        </div>
+
+    </header>
+
+    <!-- Main -->
+
+    <div id="main">
+
+        <!-- One -->
+        <section id="one">
+            <header class="major">
+                <h2>欢迎来到我的网页。</h2>  
+            </header>
+        </section>
+        
+        <h1>通过邮箱联系我</h1>
+        <div class="email-div">
+            <p>2748400240@qq.com</p>
+        </div>
+        <div class="email-div">
+            <p>syx3204@gmail.com</p>
+        </div>
+        <div class="email-div">
+            <p>s_y_x@outlook.com</p>
+        </div>
+        
+        <!-- 添加留言板 -->
+        <section id="message-board">
+            <h2>给我留言(未完工)</h2>
+            <form id="message-form">
+                <label for="name">姓名:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">电子邮箱:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">留言:</label><br>
+                <textarea id="message" name="message" required></textarea><br>
+                <button type="submit">提交</button>
+            </form>
+            <p id="success-message" style="display: none;">您的留言已提交，谢谢！</p>
+            <h3>留言列表</h3>
+            <div id="message-list"></div>
+        </section>
+
+    </div>
+    
+
+
+    
+            <!-- 新增 JavaScript 文件引用 -->
+    <script src="scripts.js"></script>
+</body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+    <script src="https://files.cnblogs.com/files/wkfvawl/APlayer.min.js"></script>
+    <div id="aplayer" class="aplayer"  data-id="12422174133" data-server="netease" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div> 
+    <script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>
+
+</html>
