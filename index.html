@@ -10,6 +10,7 @@
     <script src="APlayer.min.js"></script>
     <div id="aplayer" class="aplayer"  data-id="12422174133" data-server="netease" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#5DADE2"></div> 
     <script src="Meting.min.js"></script>
+
     <!-- <div id = "background-main" ></div> -->
 
     <style>
@@ -25,6 +26,7 @@
             width: 500px;
             z-index: 100; 
         }*/
+
         .aplyer{
             mini: false; 
             autoplay: false; 
@@ -165,6 +167,7 @@
         .message-header {
             font-weight: bold;
         }
+
     </style>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -219,15 +222,73 @@
                 <button type="submit">提交</button>
             </form>
             <p id="success-message" style="display: none;">您的留言已提交，谢谢！</p>
-            <h3>留言列表</h3>
-            <div id="message-list"></div>
+            <h3>留言列表(未完工)</h3>
+            <div id="message-list"><h3>留言加载失败(功能暂未开通)</h3></div>
         </section>
 
+
+
+        <div style="border: 2.5px solid #ccc; padding: 20px; border-radius: 10px; background-color: rgba(29, 28, 28, 0.246);">
+            <h2 style="color:white">版本历史</h2>
+            <ul style="color:white">
+                <li style="color:white">
+                    <strong style="color:white">版本 1.0.0 (2024-08-04)</strong>
+                    <ul style="color:white">
+                        <li>初始化发布。</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="color:white">
+                <li style="color:white">
+                    <strong style="color:white">版本 1.0.2 (2024-08-05)</strong>
+                    <ul style="color:white">
+                        <li>优化界面。</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="color:white">
+                <li style="color:white">
+                    <strong style="color:white">版本 1.0.5 (2024-08-06)</strong>
+                    <ul style="color:white">
+                        <li>优化界面，做出了留言基本界面（前端），还没搞明白后端（需要服务器，但我没有，暂时没找到免费的），不会用云存储，所以留言还是未完工（无奈）。（待留言模块有新变动我会在版本历史中说明。）</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="color:white">
+                <li style="color:white">
+                    <strong style="color:white">版本 1.0.5 (2024-08-07)</strong>
+                    <ul style="color:white">
+                        <li>想增加一个音乐播放器，但还没搞定。故版本号不变。</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="color:white">
+                <li style="color:white">
+                    <strong style="color:white">版本 1.0.7 (2024-08-08 about 8:00AM)</strong>
+                    <ul style="color:white">
+                        <li>增加了一个音乐播放器。</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="color:white">
+                <li style="color:white">
+                    <strong style="color:white">版本 1.1.0 (2024-08-08 about 21:30PM)</strong>
+                    <ul style="color:white">
+                        <li>才发现音乐播放器主题色是粉色（#F58EA8）😂，改成了天蓝色（#5DADE2）（应该算天蓝色吧）。并添加了历史版本记录。</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-    
 
 
     
+
+        
+
+
+
+
             <!-- 新增 JavaScript 文件引用 -->
     <script src="scripts.js"></script>
 </body>
