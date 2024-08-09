@@ -231,30 +231,7 @@
         <script>
 
 // 使用 ip-api.com API 获取位置信息
-            document.addEventListener('DOMContentLoaded', function() {
-            // 使用 ip-api.com API 获取位置信息
-            fetch('http://ip-api.com/json/')
-                .then(response => response.json())
-                .then(data => {
-                    const city = data.city;
-                    const region = data.regionName;
 
-                    // 使用 wttr.in 服务获取天气数据
-                    fetch(`http://wttr.in/${city}?format=j1`)
-                        .then(response => response.json())
-                        .then(weatherData => {
-                            const weatherInfo = `
-                                <h2 style="cz-index: 500000;color:rgb(255, 255, 255);">天气（可能会不准确）</h2> 
-                                <p>位置: ${city}, ${region}</p>
-                                <p>温度: ${weatherData.current_condition[0].temp_C}°C</p>
-                                <p>天气状况: ${weatherData.current_condition[0].weatherDesc[0].value}</p>
-                            `;
-                            document.getElementById('weather-info').innerHTML = weatherInfo;
-                        })
-                        .catch(error => console.error('Error fetching weather data:', error));
-                })
-                .catch(error => console.error('Error fetching IP data:', error));
-        });
             // 使用代理URL来绕过CORS限制
         const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
         const apiUrl = 'http://wttr.in/${city}?format=j1';
