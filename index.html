@@ -6,353 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     
+    <!-- 音乐播放器相关 -->
     <link rel="stylesheet" href="APlayer.min.css">
     <script src="APlayer.min.js"></script>
     <div id="aplayer" class="aplayer"  data-id="12422174133" data-server="netease" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#5DADE2"></div> 
     <script src="Meting.min.js"></script>
 
-    <!-- <div id = "background-main" ></div> -->
+    <!-- 其他样式和脚本 -->
+    <!-- ... -->
 
     <style>
         /* 天气样式↓ */
         #weather-info {
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #01010178;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-            margin: 20px auto;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #ffffff;
-            z-index: 500000;
-            transition: all 0.3s ease-in-out;
+            /* ... */
         }
-        #weather-info:hover {
-            text-align: center;
-            transform: scale(1.02);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-            background-color: rgba(0, 0, 0, 0.614);
-        }
-
-
-
-        /*<!--#background-main {
-            background: #1f1815;
-            opacity: 0.2;
-            position: fixed; 
-            bottom: 0; 
-            left: 0;
-            right: 0; 
-            height: 50px; 
-            float: left;
-            width: 500px;
-            z-index: 100; 
-        }*/
-
-        .aplyer{
-            mini: false; 
-            autoplay: false; 
-            theme: '#FADFA3'; 
-            loop: 'all'; 
-            order: 'random'; 
-            preload: 'auto'; 
-            volume: 0.7; 
-            mutex: true; 
-            listFolded: false; 
-            listMaxHeight: 90; 
-            lrcType: 3; 
- 
- 
- 
-        }
-        .header h1{
-            text-align: center;
-        }
-        .header h2{
-            text-align: center;
-        }
-        .main h1{
-            position: fixed;
-            text-align: center;
-        }
-        html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        }
-        
-        .satic-area {
-        position: fixed;
-        z-index: -50;
-        width: 100%;
-        height: 100%;
-        background: url(img/poster-about.jpg) no-repeat center;
-        background-size: cover;
-        }
-        
-        .dynamic-area1   {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: url(img/poster-drop-animate2.png) repeat-x 0px 0px;
-        background-size: cover;
-        animation: posterDrop1 6000s linear infinite;
-        }
-        
-        @keyframes posterDrop1 {
-        from { background-position: 0 0; }
-        to { background-position: 4000% 0; }
-        }
-        
-        .dynamic-area2   {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: url(img/poster-drop-animate1.png) repeat-x 0px 0px;
-        background-size: cover;
-        animation: posterDrop2 8000s linear infinite;
-        }
-        
-        @keyframes posterDrop2 {
-        from { background-position: 0 0; }
-        to { background-position: 30000% 0; }
-        }  
-        
-        
-        
-        .email-div {
-            font-size: 30px;
-            backdrop-filter: blur(3px);
-            margin: 10px auto;
-            background-color: black;
-            text-align: center;
-            border-radius: 10px;
-            height: 50px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-            opacity: 0.8;
-            cursor: pointer;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .email-div:hover {
-
-            transform:scale(1.005);
-            opacity: 1;
-            
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-            background-color: #333;
-
-        }
-
-        .email-div:active {
-            background-color: #555;
-        }
-
-        .email-div p {
-            margin: 0;
-        }
-
-        .one{
-            position: fixed;
-        }
-
-        
-
-        /* 新增留言模块样式 */
-        .message-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            z-index: 100;
-        }
-
-        .message-item {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.581);
-            border-radius: 10px;
-        }
-
-        .message-header {
-            font-weight: bold;
-        }
-
+        /* 其他样式 ... */
     </style>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
+    <!-- 页面内容 -->
+    <!-- ... -->
 
-    <div class="satic-area">
-        <div class="dynamic-area1"></div>
-        <div class="dynamic-area2"></div>
-    </div>  
-
-    <!-- Header -->
-    <header id="header">
-        <div class="inner">
-            <a class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
-            <h1><strong>宋泳贤</strong></h1>
-
-
-    </header>
-
-    <!-- Main -->
-
-    <div id="main">
-        <section id="one">
-            <header class="major">
-                <h2>欢迎来到我的网页。</h2>  
-            </header>
-        </section>   
-        <!-- 天气div -->
-        
-        <div id="weather-info">
-            <h2 style="cz-index: 500000;color:rgb(255, 255, 255);">天气（可能会不准确）</h2> 
-            <p style="cz-index: 500000;color:rgb(255, 255, 255);">位置: </p>
-            <p style="cz-index: 500000;color:rgb(255, 250, 250);">温度: </p>
-            <p style="cz-index: 500000;color:rgb(255, 255, 255);">天气状况: </p>
-        </div>
-        <script>
-
-// 使用 ip-api.com API 获取位置信息
-
-            // 使用代理URL来绕过CORS限制
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        const apiUrl = 'http://wttr.in/${city}?format=j1';
-        
-        fetch(proxyUrl + apiUrl)
-            .then(response => response.json())
-            .then(weatherData => {
-                // 处理天气数据
-            })
-            .catch(error => console.error('Error fetching weather data:', error));
-
-    </script>
-        
-
-        
-        <!-- One -->
-
-        
-        <h1>通过邮箱联系我</h1>
-        <div class="email-div">
-            <p>2748400240@qq.com</p>
-        </div>
-        <div class="email-div">
-            <p>syx3204@gmail.com</p>
-        </div>
-        <div class="email-div">
-            <p>s_y_x@outlook.com</p>
-        </div>
-        
-        <!-- 添加留言板 -->
-        <section id="message-board">
-            <h2>给我留言(未完工)</h2>
-            <form id="message-form">
-                <label for="name">姓名:</label><br>
-                <input type="text" id="name" name="name" required><br>
-                <label for="email">电子邮箱:</label><br>
-                <input type="email" id="email" name="email" required><br>
-                <label for="message">留言:</label><br>
-                <textarea id="message" name="message" required></textarea><br>
-                <button type="submit">提交</button>
-            </form>
-            <p id="success-message" style="display: none;">您的留言已提交，谢谢！</p>
-            <h3>留言列表(未完工)</h3>
-            <div id="message-list"><h3>留言加载失败(功能暂未开通)</h3></div>
-        </section>
-
-
-
-        <div style="border: 2.5px solid #ccc; padding: 20px; border-radius: 10px; background-color: rgba(29, 28, 28, 0.246);">
-            <h2 style="color:white">版本历史</h2>
-            <ul style="color:white">
-                <li style="color:white">
-                    <strong style="color:white">版本 1.0.0 (2024-08-04)</strong>
-                    <ul style="color:white">
-                        <li>初始化发布。</li>
-                    </ul>
-                </li>
-            </ul>
-            <ul style="color:white">
-                <li style="color:white">
-                    <strong style="color:white">版本 1.0.2 (2024-08-05)</strong>
-                    <ul style="color:white">
-                        <li>优化界面。</li>
-                    </ul>
-                </li>
-            </ul>
-            <ul style="color:white">
-                <li style="color:white">
-                    <strong style="color:white">版本 1.0.5 (2024-08-06)</strong>
-                    <ul style="color:white">
-                        <li>优化界面，做出了留言基本界面（前端），还没搞明白后端（需要服务器，但我没有，暂时没找到免费的），不会用云存储，所以留言还是未完工（无奈）。（待留言模块有新变动我会在版本历史中说明。）</li>
-                    </ul>
-                </li>
-            </ul>
-            <ul style="color:white">
-                <li style="color:white">
-                    <strong style="color:white">版本 1.0.5 (2024-08-07)</strong>
-                    <ul style="color:white">
-                        <li>想增加一个音乐播放器，但还没搞定。故版本号不变。</li>
-                    </ul>
-                </li>
-            </ul>
-            <ul style="color:white">
-                <li style="color:white">
-                    <strong style="color:white">版本 1.0.7 (2024-08-08 about 8:00AM)</strong>
-                    <ul style="color:white">
-                        <li>增加了一个音乐播放器。</li>
-                    </ul>
-                </li>
-            </ul>
-            <ul style="color:white">
-                <li style="color:white">
-                    <strong style="color:white">版本 1.1.0 (2024-08-08 about 21:30PM)</strong>
-                    <ul style="color:white">
-                        <li>才发现音乐播放器主题色是粉色（#F58EA8）😂，改成了天蓝色（#5DADE2）（应该算天蓝色吧）。并添加了历史版本记录。</li>
-                    </ul>
-                </li>
-            </ul>
-            <ul style="color:white">
-                <li style="color:white">
-                    <strong style="color:white">版本 1.1.1 (2024-08-09 about 11:00AM)</strong>
-                    <ul style="color:white">
-                        <li>又增加了天气，但IP判断可能不准，因此城市会有误。额，毕竟用的免费服务，之后再看看有没有准确的API。</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+    <!-- 天气div -->
+    <div id="weather-info">
+        <h2>天气（可能会不准确）</h2> 
+        <p>位置: </p>
+        <p>温度: </p>
+        <p>天气状况: </p>
     </div>
 
+    <!-- 页面其他内容 -->
+    <!-- ... -->
 
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 使用 ip-api.com API 获取位置信息
+            fetch('http://ip-api.com/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const city = data.city;
+                    const region = data.regionName;
 
-        
+                    // 使用 cors-anywhere 代理服务获取天气数据
+                    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+                    const apiUrl = `http://wttr.in/${city}?format=j1`;
 
+                    fetch(proxyUrl + apiUrl)
+                        .then(response => response.json())
+                        .then(weatherData => {
+                            const weatherInfo = `
+                                <h2>天气（可能会不准确）</h2> 
+                                <p>位置: ${city},${region}</p>
+                                <p>温度: ${weatherData.current_condition[0].temp_C}°C</p>
+                                <p>天气状况: ${weatherData.current_condition[0].weatherDesc[0].value}</p>
+                            `;
+                            document.getElementById('weather-info').innerHTML = weatherInfo;
+                        })
+                        .catch(error => console.error('Error fetching weather data:', error));
+                })
+                .catch(error => console.error('Error fetching IP data:', error));
+        });
+    </script>
 
-
-
-            <!-- 新增 JavaScript 文件引用 -->
-    <script src="scripts.js"></script>
+    <!-- 页面其他脚本 -->
+    <!-- ... -->
 
 </body>
-
-
 </html>
