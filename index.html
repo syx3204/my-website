@@ -14,6 +14,31 @@
     <!-- <div id = "background-main" ></div> -->
 
     <style>
+        /* 天气样式↓ */
+        #weather-info {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #01010178;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin: 20px auto;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #ffffff;
+            z-index: 500000;
+            transition: all 0.3s ease-in-out;
+        }
+        #weather-info:hover {
+            text-align: center;
+            transform: scale(1.02);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.614);
+        }
+
+
+
         /*<!--#background-main {
             background: #1f1815;
             opacity: 0.2;
@@ -183,20 +208,59 @@
         <div class="inner">
             <a class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
             <h1><strong>宋泳贤</strong></h1>
-        </div>
+
 
     </header>
 
     <!-- Main -->
 
     <div id="main">
-
-        <!-- One -->
         <section id="one">
             <header class="major">
                 <h2>欢迎来到我的网页。</h2>  
             </header>
-        </section>
+        </section>   
+        <!-- 天气div -->
+        
+        <div id="weather-info">
+            <h2 style="cz-index: 500000;color:rgb(255, 255, 255);">天气（可能会不准确）</h2> 
+            <p style="cz-index: 500000;color:rgb(255, 255, 255);">位置: </p>
+            <p style="cz-index: 500000;color:rgb(255, 250, 250);">温度: </p>
+            <p style="cz-index: 500000;color:rgb(255, 255, 255);">天气状况: </p>
+        </div>
+        <script>
+
+// 使用 ip-api.com API 获取位置信息
+            document.addEventListener('DOMContentLoaded', function() {
+            // 使用 ip-api.com API 获取位置信息
+            fetch('http://ip-api.com/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const city = data.city;
+                    const region = data.regionName;
+
+                    // 使用 wttr.in 服务获取天气数据
+                    fetch(`http://wttr.in/${city}?format=j1`)
+                        .then(response => response.json())
+                        .then(weatherData => {
+                            const weatherInfo = `
+                                <h2 style="cz-index: 500000;color:rgb(255, 255, 255);">天气（可能会不准确）</h2> 
+                                <p>位置: ${city}, ${region}</p>
+                                <p>温度: ${weatherData.current_condition[0].temp_C}°C</p>
+                                <p>天气状况: ${weatherData.current_condition[0].weatherDesc[0].value}</p>
+                            `;
+                            document.getElementById('weather-info').innerHTML = weatherInfo;
+                        })
+                        .catch(error => console.error('Error fetching weather data:', error));
+                })
+                .catch(error => console.error('Error fetching IP data:', error));
+        });
+        </script>
+        
+
+        
+        <!-- One -->
+
         
         <h1>通过邮箱联系我</h1>
         <div class="email-div">
@@ -229,9 +293,6 @@
 
 
         <div style="border: 2.5px solid #ccc; padding: 20px; border-radius: 10px; background-color: rgba(29, 28, 28, 0.246);">
-            <h4 style="color:white">提示：此网站由于使用了cloudflare、github和us.kg域名，都是国外的，所以加载缓慢或加载失败都是正常现象（毕竟白嫖，请见谅。），使用科学上网可能会缓解这些现象。但请注意，请在当地法律允许的情况下酌情使用科学上网。
-
-            <h1>  </h1>
             <h2 style="color:white">版本历史</h2>
             <ul style="color:white">
                 <li style="color:white">
@@ -281,6 +342,14 @@
                     </ul>
                 </li>
             </ul>
+            <ul style="color:white">
+                <li style="color:white">
+                    <strong style="color:white">版本 1.1.1 (2024-08-09 about 11:00AM)</strong>
+                    <ul style="color:white">
+                        <li>又增加了天气，但IP判断可能不准，因此城市会有误。额，毕竟用的免费服务，之后再看看有没有准确的API。</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -294,6 +363,7 @@
 
             <!-- 新增 JavaScript 文件引用 -->
     <script src="scripts.js"></script>
+
 </body>
 
 
