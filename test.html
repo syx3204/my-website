@@ -51,18 +51,36 @@
         
         
         .test{
-          border-radius:10px;
-          background-color: #3333336c;
-          color:white;
+            border-radius:10px;
+            background-color: #3333336c;
+            color:white;
+            cursor: pointer;
         }
 
         
-
+        .return-button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px; /* 设置圆角 */
+            cursor: pointer; /* 设置鼠标样式为手型 */
+            transition: background-color 0.3s ease; /* 添加平滑过渡效果 */
+        }
+    
+      .return-button:hover {
+          background-color: #e0e0e0; /* 鼠标悬停时改变背景颜色 */
+        }
 
     </style>
 
 </head>
 <body>
+    
+    <div class="return-button" onclick="window.location.href='https://syxsyx.us.kg';">返回</div>
 
     <div class="satic-area">
         <div class="dynamic-area1"></div>
