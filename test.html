@@ -50,17 +50,14 @@
         }  
         
         
-        .test{
-            border-radius:10px;
-            background-color: #3333336c;
-            color:white;
-            cursor: pointer;
-        }
+
 
         
         .return-button {
+            
+            position: fixed;
             display: inline-block;
-            padding: 10px 20px;
+            padding: 4px 8px;
             text-align: center;
             font-size: 16px;
             color: #333;
@@ -75,12 +72,21 @@
           background-color: #e0e0e0; /* 鼠标悬停时改变背景颜色 */
         }
 
+        .test{
+        top:50px;
+        position: relative;
+        border-radius:5px;
+        background-color: #3333336c;
+        text-align: center;
+        cursor: pointer;
+        width: 30%;
+        }
     </style>
 
 </head>
 <body>
     
-    <div class="return-button" onclick="window.location.href='https://syxsyx.us.kg';">返回</div>
+    <a href='https://syxsyx.us.kg'><div class="return-button" ><返回</div></a>
 
     <div class="satic-area">
         <div class="dynamic-area1"></div>
@@ -89,8 +95,8 @@
     
   
     <div class="test">
-        <h3>这是一个测试html文件。</h3>
-        <h3>This is a test html file.</h3>
+        <h2 style="color:white;">这是一个测试html文件。</h2>
+        <h2 style="color:white;">This is a test html file.</h2>
 
     </div>
 
