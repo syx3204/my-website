@@ -94,7 +94,7 @@
             listMaxHeight: 90; 
             lrcType: 3; 
  
- 
+
  
         }
         .header h1{
@@ -381,7 +381,35 @@
 
     <!-- 新增 JavaScript 文件引用 -->
     <script src="scripts.js"></script>
-
+    <script>
+        function isCrawler() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            // 检查User-Agent中是否包含常见的爬虫标识
+            const crawlerKeywords = ['python', 'scrapy', 'urllib', 'bot', 'spider'];
+            for (let keyword of crawlerKeywords) {
+                if (userAgent.includes(keyword)) {
+                    return true;
+                }
+            }
+            // 检查是否支持Web Workers
+            if (!window.Worker) {
+                return true;
+            }
+            // 检查是否支持Fetch API
+            if (!window.fetch) {
+                return true;
+            }
+            // 如果所有检查都通过，则不是爬虫
+            return false;
+        }
+    
+        if (isCrawler()) {
+            // 如果是爬虫，可以显示不同的内容或重定向
+            document.write('<h1>You seem to be a bot.</h1>');
+            // 或者重定向到另一个页面
+            // window.location.href = '/crawler.html';
+        }
+    </script>
 </body>
 
 
