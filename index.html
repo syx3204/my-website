@@ -5,9 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="icon" href="ic_the_developer_filled.svg">
-    <link rel="shortcut icon" href="ic_the_developer_filled.svg">
-    <link rel="apple-touch-icon" href="ic_the_developer_filled.svg">
+    <!-- 浅色模式图标 -->
+    <link rel="icon" type="image/png" href="favicon-light.png" id="light-icon">
+    <!-- 深色模式图标 -->
+    <link rel="icon" type="image/png" href="favicon-dark.png" id="dark-icon" style="display: none;">
+    <link rel="shortcut icon" href="favicon-dark.png">
+    <link rel="apple-touch-icon" href="favicon-dark.png">
        
     <!-- 元描述 -->
     <meta name="description" content="这里是宋泳贤的个人网页。">
@@ -22,7 +25,7 @@
     <meta property="og:title" content="宋泳贤的个人网页 - 这里是宋泳贤的个人网页。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://syxsyx.us.kg/">
-    <meta property="og:image" content="ic_the_developer_filled.svg">
+    <meta property="og:image" content="favicon-dark.png">
     <meta property="og:description" content="这里是宋泳贤的个人网页。">
     <meta property="og:site_name" content="宋泳贤的个人网页">
 
@@ -30,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="宋泳贤的个人网页 - 这里是宋泳贤的个人网页。">
     <meta name="twitter:description" content="这里是宋泳贤的个人网页。">
-    <meta name="twitter:image" content="ic_the_developer_filled.svg">
+    <meta name="twitter:image" content="favicon-dark.png">
 
     <!-- 禁用爬虫 -->
     <meta name="robots" content="noindex, nofollow">
@@ -413,7 +416,25 @@
             // window.location.href = '/crawler.html';
         }
     </script>
-    
+    <script>
+    function setFavicon() {
+        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (prefersDarkMode) {
+            document.getElementById('dark-icon').style.display = 'block';
+            document.getElementById('light-icon').style.display = 'none';
+        } else {
+            document.getElementById('dark-icon').style.display = 'none';
+            document.getElementById('light-icon').style.display = 'block';
+        }
+    }
+
+    // 初始化
+    setFavicon();
+
+    // 监听系统模式变化
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
+</script>
 </body>
 
 
