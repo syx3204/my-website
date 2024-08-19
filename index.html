@@ -239,7 +239,55 @@
             
         }
 
-        
+        <!-- 《时间都去哪了》模块css -->
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #01010178;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%; /* 设置宽度 */
+        }
+        .progress-background {
+            width: 100%; /* 设置宽度 */
+            height: 20px;
+            border-radius: 10px;
+            background-color: #ddd;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width 0.5s ease-in-out;
+            border-radius: 10px;
+        }
+        .progress-text {
+            margin-left: 10px;
+            line-height: 20px;
+        }
+        .year-progress .bar-fill {
+            background-color: #2ecc71;
+        }
+        .month-progress .bar-fill {
+            background-color: #3498db;
+        }
+        .day-progress .bar-fill {
+            background-color: #e74c3c;
+        }
+        .current-time {
+            margin-top: 10px;
+        }
     </style>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -328,10 +376,36 @@
                     .catch(error => console.error('Error fetching IP data:', error));
             });
         </script>
-       
-        <!-- One -->
 
         
+        <!-- 《时间都去哪了》模块html -->
+        <div class="container">
+            <div class="progress-bar year-progress">
+                <div class="progress-background">
+                    <div class="bar-fill" id="year-fill"></div>
+                </div>
+                <span class="progress-text" id="year-text"></span>
+            </div>
+            <div class="progress-bar month-progress">
+                <div class="progress-background">
+                    <div class="bar-fill" id="month-fill"></div>
+                </div>
+                <span class="progress-text" id="month-text"></span>
+            </div>
+            <div class="progress-bar day-progress">
+                <div class="progress-background">
+                    <div class="bar-fill" id="day-fill"></div>
+                </div>
+                <span class="progress-text" id="day-text"></span>
+                <span class="current-time" id="current-time"></span>
+            </div>
+        </div>
+        <script src="timeGone.js"></script>
+
+
+        
+        
+        <!-- One -->
         <h1>通过邮箱联系我</h1>
         <div class="email-div">
             <p>2748400240@qq.com</p>
@@ -363,9 +437,10 @@
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-        
-        <a href='test.html'>测试文件</a>
 
+
+
+        
         
         <div style="border: 2.5px solid #ccc; padding: 20px; border-radius: 10px; background-color: rgba(29, 28, 28, 0.246);">
             <h2 style="color:white">版本历史</h2>
@@ -446,6 +521,15 @@
                     <strong style="color:white">版本 1.1.5 (2024-08-19 about 21:20)</strong>
                     <ul style="color:white">
                         <li>重大消息，评论功能正式上线，评论提供商：<a href="https://disqus.com/">Disqus</a>使用了其免费计划。Disqus官网说明可能在评论模块加入一些广告(毕竟免费，还要啥自行车?)</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul style="color:white">
+                <li style="color:white">
+                    <strong style="color:white">版本 1.1.6 (2024-08-19 about 22:20)</strong>
+                    <ul style="color:white">
+                        <li>更新了《时间都去哪了》模块，让您更形象的感受时间。同时也用来警醒自己。</li>
+                        <li>不出意外的话，这应该是2024年暑假的最后一次迭代。首先是临近开学，实在是没时间更新了；其次是没有好的思路了。当然，意见/建议欢迎投稿至我上方的邮箱。</li>
                     </ul>
                 </li>
             </ul>
