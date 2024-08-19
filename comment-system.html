@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment System</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Leave a Comment</h1>
+    <form id="commentForm">
+        <label for="name">Name (max 20 characters):</label>
+        <input type="text" id="name" required maxlength="20">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <br>
+        <label for="comment">Comment (max 100 characters):</label>
+        <textarea id="comment" required maxlength="100"></textarea>
+        <br>
+        <button type="submit">Submit Comment</button>
+    </form>
+
+    <h2>Comments</h2>
+    <ul id="commentsList"></ul>
+
+    <script>
+    document.getElementById('commentForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const comment = document.getElementById('comment').value.trim();
+
+        if (name.length > 20 || comment.length > 100) {
+            alert('Please ensure that the name is not longer than 20 characters and the comment is not longer than 100 characters.');
+            return;
+        }
+
+        try {
+            await axios.post('/api/comments', { name, email, comment });
+            document.getElementById('commentsList').innerHTML = '';
+            loadComments();
+        } catch (error) {
+            console.error(error);
+        }
+    });
+
+    async function loadComments() {
+        try {
+            const response = await axios.get('/api/comments');
+            const comments = response.data;
+
+            const commentsList = document.getElementById('commentsList');
+            comments.forEach(comment => {
+                const li = document.createElement('li');
+                li.textContent = `${comment.name} (${comment.email}): ${comment.comment}`;
+                commentsList.appendChild(li);
+            });
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    loadComments(); // Load comments on page load.
+    </script>
+</body>
+</html>
