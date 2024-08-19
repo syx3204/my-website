@@ -209,34 +209,6 @@
         .one{
             position: fixed;
         }
-
-        
-
-        /* 新增留言模块样式 */
-        .message-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            z-index: 100;
-        }
-
-        .message-item {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.581);
-            border-radius: 10px;
-        }
-
-        .message-header {
-            font-weight: bold;
-        }
-
-
-
         .dark-mode-icon {
           display: none;
         }
@@ -367,22 +339,25 @@
             <p>s_y_x@outlook.com</p>
         </div>
         
-        <!-- 添加留言板 -->
-        <section id="message-board">
-            <h2>给我留言(未完工)</h2>
-            <form id="message-form">
-                <label for="name">姓名:</label><br>
-                <input type="text" id="name" name="name" required><br>
-                <label for="email">电子邮箱:</label><br>
-                <input type="email" id="email" name="email" required><br>
-                <label for="message">留言:</label><br>
-                <textarea id="message" name="message" required></textarea><br>
-                <button type="submit">提交</button>
-            </form>
-            <p id="success-message" style="display: none;">您的留言已提交，谢谢！</p>
-            <h3>留言列表(未完工)</h3>
-            <div id="message-list"><h3>留言加载失败(功能暂未开通)</h3></div>
-        </section>
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://song-yong-xian-de-ge-ren-wang-ye.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
         
         <a href='test.html'>测试文件</a>
