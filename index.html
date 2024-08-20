@@ -290,6 +290,17 @@
         .current-time {
             margin-top: 10px;
         }
+
+        <!-- 评论模块 -->
+            twikoo.init({
+            envId: 'IMTv2O2uVjZroRfeGpEMxBMd-MdYXbMMI',
+            el: '#twikoo',
+            path: window.location.pathname, // 默认使用当前页面路径作为评论路径
+            placeholder: '来都来了，留个痕迹，说点什么再走吧...', // 评论框的占位文本
+            lang: 'zh-CN', // 评论系统的语言
+            region: 'cn' // LeanCloud 的区域，cn 为中国大陆
+        });
+
     </style>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -479,23 +490,16 @@
 
 
         
-        <div id="disqus_thread"></div>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3/dist/disqusjs.css">
-        <script src="https://cdn.jsdelivr.net/npm/disqusjs@1.3/dist/disqus.js"></script>
+        <!-- 评论模块 -->
+        <div id="twikoo"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.0/dist/twikoo.all.min.js"></script>
         <script>
-        var dsqjs = new DisqusJS({
-            shortname: 'song-yong-xian-de-ge-ren-wang-ye',
-            siteName: '宋泳贤的个人网页',
-            identifier: '',
-            url: 'https://syxsyx.us.kg',
-            title: '宋泳贤的个人网页',
-            api: '',
-            apikey: '',
-            admin: '宋泳贤',
-            adminLabel: '高级管理员'，
-            nesting: 
-        });
+          twikoo.init({
+            envId: 'IMTv2O2uVjZroRfeGpEMxBMd-MdYXbMMI', // LeanCloud 中的应用 ID
+            el: '#twikoo' // 容器选择器
+          });
         </script>
+
 
         
         
