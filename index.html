@@ -481,37 +481,21 @@
         
         <div id="disqus_thread"></div>
         <script>
-        
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        
-        // 尝试加载原始Disqus脚本
-        s.src = 'https://song-yong-xian-de-ge-ren-wang-ye.disqus.com/embed.js';
-        s.async = true;
-        s.setAttribute('data-timestamp', +new Date());
-        
-        // 添加错误处理
-        s.onerror = function() {
-            // 如果原始脚本加载失败，则尝试加载通过代理的Disqus脚本
-            var proxyS = d.createElement('script');
-            proxyS.src = 'https://disqus-proxy-serverless.example.com/proxy?url=https%3A%2F%2Fsong-yong-xian-de-ge-ren-wang-ye.disqus.com%2Fembed.js';
-            proxyS.async = true;
-            (d.head || d.body).appendChild(proxyS);
-        };
-        
-        (d.head || d.body).appendChild(s);
-        
-        })();
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://song-yong-xian-de-ge-ren-wang-ye.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
@@ -646,7 +630,10 @@
             // window.location.href = '/crawler.html';
         }
     </script>
-    <script id="dsq-count-scr" src="//song-yong-xian-de-ge-ren-wang-ye.disqus.com/count.js" async></script>
+    <script>
+        var disqus_shortname = "song-yong-xian-de-ge-ren-wang-ye";
+    </script>
+    <script src="//c.disquscdn.com/embed.js">
     <script src="timeGone.js"></script>
 </body>
 
