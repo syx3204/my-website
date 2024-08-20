@@ -342,7 +342,7 @@
         </div>
         
         <div id="raincloud" style="margin-bottom: 20px;  padding: 10px;">
-            <h1 style="color: #ffffff;">🔈公告：重大消息，评论功能正式上线，评论提供商：<a href="https://disqus.com/">Disqus</a>，使用了其免费计划。Disqus官网说明可能在评论模块加入一些广告(毕竟免费，还要啥自行车?)</h1>
+            <h1 style="color: #ffffff;">🔈公告：重置了评论系统，现在换成了免费无广告的<a href="https://twikoo.js.org/">twikoo</a>了，缺点就是部署起来很麻烦，而且依赖第三方存储空间有限，但优点也很明显，对国内访问更友好了。</h1>
             <pre>
                 
             </pre>
@@ -483,20 +483,7 @@
 
 
         
-        <!-- 评论模块 -->
-        <div id="comment-backgroud" style="border-radius: 10px; background-color: #ffffffd6;">
-        <div id="tcomment"></div>
-        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.9/dist/twikoo.all.min.js"></script>
-        <script>
-        twikoo.init({
-            envId: 'https://syx3204-github-io.vercel.app/', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-            el: '#tcomment', // 容器元素
-            // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-            //path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-            lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
-        })
-        </script>
-        </div>
+
 
 
         
@@ -579,7 +566,7 @@
                 <li style="color:white">
                     <strong style="color:white">版本 1.1.5 (2024-08-19 about 21:20)</strong>
                     <ul style="color:white">
-                        <li>重大消息，评论功能正式上线，评论提供商：<a href="https://disqus.com/">Disqus</a>使用了其免费计划。Disqus官网说明可能在评论模块加入一些广告(毕竟免费，还要啥自行车?)</li>
+                        <li><del>重大消息，评论功能正式上线，评论提供商：<a href="https://disqus.com/">Disqus</a>使用了其免费计划。Disqus官网说明可能在评论模块加入一些广告(毕竟免费，还要啥自行车?)</del></li>
                     </ul>
                 </li>
             </ul>
@@ -592,8 +579,34 @@
                         <li>注意，不是不迭代，而是迭代慢。会抽出空闲时间更新的，日常也会写代码，但何时把代码更新到网页就不确定了。</li>
                     </ul>
                 </li>
+                <li style="color:white">
+                    <strong style="color:white">版本 1.1.6 (此次为版本补丁)</strong>
+                    <ul style="color:white">
+                        <li>昨晚关了科学上网才发现评论在国内无法使用，去搜了才发现评论提供商(<a href="https://disqus.com/">Disqus</a>)<a href="https://cloud.tencent.com/developer/article/1861323">被墙</a>，搜了解决方法，但已经是5年前的了，早已失效。<del>(真搞不明白为什么会被墙，挺好用的软件，对开发者挺友好的。)</del>这句话请当我没说。</li>
+                        <li>重置了评论系统，现在换成了免费无广告的<a href="https://twikoo.js.org/">twikoo</a>了，缺点就是部署起来很麻烦，而且依赖第三方存储空间有限，但优点也很明显，对国内访问更友好了。</li>
+                        <li>抱歉，昨晚写的代码现在才发出来。</li>
+                    </ul>
+                </li>
             </ul>
         </div>
+    
+        <!-- 评论模块 -->
+        <div id="comment-backgroud" style="border-radius: 10px; background-color: #ffffff86; border: 2px solid #ffffff86; padding: 10px; margin-top: 20px; margin-bottom: 20px;">
+        <div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.9/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+            envId: 'https://syxtwikoo-1ptmgq1sx-syx-s-projects.vercel.app/', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+            el: '#tcomment', // 容器元素
+            // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+            //path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+            lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
+        })
+        </script>
+        </div>
+    
+    
+    
     </div>
 
     <!-- 新增 JavaScript 文件引用 -->
