@@ -292,14 +292,7 @@
         }
 
         <!-- 评论模块 -->
-            twikoo.init({
-            envId: 'IMTv2O2uVjZroRfeGpEMxBMd-MdYXbMMI',
-            el: '#twikoo',
-            path: window.location.pathname, // 默认使用当前页面路径作为评论路径
-            placeholder: '来都来了，留个痕迹，说点什么再走吧...', // 评论框的占位文本
-            lang: 'zh-CN', // 评论系统的语言
-            region: 'cn' // LeanCloud 的区域，cn 为中国大陆
-        });
+
 
     </style>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -492,13 +485,22 @@
         
         <!-- 评论模块 -->
         <div id="twikoo"></div>
-        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.0/dist/twikoo.all.min.js"></script>
+    
+        <!-- 引入 Twikoo -->
+        <script src="https://unpkg.com/twikoo@latest/dist/twikoo.js"></script>
+    
         <script>
-          twikoo.init({
-            envId: 'IMTv2O2uVjZroRfeGpEMxBMd-MdYXbMMI', // LeanCloud 中的应用 ID
-            el: '#twikoo' // 容器选择器
-          });
+            // 配置 Twikoo
+            const twikoo = Twikoo({
+                envId: 'IMTv2O2uVjZroRfeGpEMxBMd-MdYXbMMI', // 替换为你的 LeanCloud App ID
+                region: 'cn', // 选择地区，这里选择中国大陆
+                el: '#twikoo'
+            });
+    
+            // 初始化 Twikoo
+            twikoo.init();
         </script>
+
 
 
         
