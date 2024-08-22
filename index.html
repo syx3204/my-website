@@ -46,68 +46,6 @@
     <!-- <div id = "background-main" ></div> -->
 
     <style>
-        /* From Uiverse.io by rushik0507 */ 
-        .parent {
-        display: flex;
-        justify-content: center; /* 水平居中 */
-        align-items: center;     /* 垂直居中 */
-        height: 100vh;           /* 使用视口单位使父元素占据整个视口高度 */
-        }
-
-        .child {
-        /* 子元素的样式 */
-        background-color: #1d1d1d49;
-        padding: 20px;
-        border-radius: 5px;
-        text-align: center;
-        }
-        #loading{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-
-
-
-        }
-
-        .container {
-        width: 3.25em;
-        transform-origin: center;
-        animation: rotate4 2s linear infinite;
-        }
-
-        .loader {
-        fill: none;
-        stroke: #106ee8;
-        stroke-width: 10;
-        stroke-dasharray: 2, 200;
-        stroke-dashoffset: 0;
-        stroke-linecap: round;
-        animation: dash4 1.5s ease-in-out infinite;
-        }
-
-        @keyframes rotate4 {
-        100% {
-            transform: rotate(360deg);
-        }
-        }
-
-        @keyframes dash4 {
-        0% {
-            stroke-dasharray: 1, 200;
-            stroke-dashoffset: 0;
-        }
-
-        50% {
-            stroke-dasharray: 90, 200;
-            stroke-dashoffset: -35px;
-        }
-
-        100% {
-            stroke-dashoffset: -125px;
-        }
-        }
 
 
         
@@ -367,27 +305,7 @@
     <meta name="rs-site-verification" content="huoeclriajkafmeq" />
 </head>
 <body>
-    <div class="parent">
-        <div class="child">
-            <svg viewBox="25 25 50 50" class="container">
-                <circle cx="50" cy="50" r="20" class="loader"></circle>
-            </svg>
-            <p>loading...</p>
-        </div>
-    </div>
-    
 
-    <script>
-        window.onload = function() {
-            // 当页面加载完成后，隐藏加载指示器
-            document.querySelector('.loading-svg').classList.add('hidden');
-        };
-    </script>
-
-
-
-
-    
     <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
     
     <div class="satic-area">
