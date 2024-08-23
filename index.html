@@ -651,7 +651,21 @@
         <audio id="sound" src="surprise/surprise.mp3" preload="auto" style="display: none;"></audio>
         <script src="surprise/script.js"></script>
         
-        
+        <!--valine-->
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <div id="vcomments"></div>
+        <script>
+        new Valine({
+        			el: '#vcomments',
+        			appId: 'IMTv2O2uVjZroRfeGpEMxBMd-MdYXbMMI',
+        			appKey: 'kSCZ7S3mucRmVDeH1I3lBf6h',
+        			placeholder: "来都来了，说点啥吧 ...",
+        			avatar:'mp',//小怪物头像,
+        			visitor: true // 阅读量统
+        		})
+        </script>
+
+
         
         <!-- 来必力City版安装代码 -->
         <div id="lv-container" data-id="city" data-uid="MTAyMC82MDA3OS8zNjU0NQ==">
