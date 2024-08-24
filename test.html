@@ -97,7 +97,18 @@
     <div class="test">
         <h2 style="color:white;">这是一个测试html文件。</h2>
         <h2 style="color:white;">This is a test html file.</h2>
-
+    <div style = 'border-radius:5px;background-color: #3333336c;'>
+        <pre style = "color:white;">
+            一，我们完全可以通过注册表来屏蔽的
+            二、点击开始—运行——输入regedit.exe，然后确定，调出注册表编辑器
+            三、，在注册表编辑器左侧的树形目录中，找到如下位置：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout
+            四、将目录保持在Keyboard Layout，然后在右边的窗口进行操作
+            五、在右侧的窗口中，新建一个名为“Scancode Map”的“二进制值”子项，
+            六、双击刚刚建立的该键，将其键值设置为“00 00 00 00 00 00 00 00 03 00 00 00 00 00 5B E0 00 00 5C E0 00 00 00 00”，
+            八、OK，关闭注册表，然后重新启动系统，你会发现，WIN键已经不可用
+               把Scancode Map项删去，Win键就恢复了
+        </pre>
+    </div>
     </div>
     <!-- 睿言评论模块 -->
     <div id="RUI-SPEAK" data-app-id="MTcyNDI0NDY5NTU0OTMwNQ==" data-app-key="jJXJD8N4kjtaHhx0vNW7xMZEvG9wO3Un8xhX5hKc1ro=" data-article-no=""></div>
