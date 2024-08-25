@@ -350,6 +350,25 @@
             
         </div>
         
+        
+        
+        <div style="margin-bottom: 20px;  padding: 10px; border-radius: 10px; background-color: #01010178; color:'white';">
+            <h5>今日诗词</h5>
+            <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+            <div id="poem_sentence"></div>
+            <div id="poem_info"></div>
+            <script type="text/javascript">
+              jinrishici.load(function(result) {
+                var sentence = document.querySelector("#poem_sentence")
+                var info = document.querySelector("#poem_info")
+                sentence.innerHTML = result.data.content
+                info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+              });
+            </script>
+        </div>
+
+
+        
         <div id="raincloud" style="margin-bottom: 20px;  padding: 10px;">
             <h5 style="color: #ffffff;">滚动到页面最底端或点击<a href ="https://syxsyx.us.kg/#comment">链接</a>前往评论模块</h5>
             <h1 style="color: #ffffff;">🔈公告：重置了评论系统，现在换成了免费无广告的<a href="https://twikoo.js.org/">twikoo</a>了，缺点就是部署起来很麻烦，而且依赖第三方存储空间有限，但优点也很明显，对国内访问更友好了。</h1>
