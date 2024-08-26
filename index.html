@@ -713,34 +713,28 @@
         <script src="https://h5.ruispeak.cn/rs.js" type="text/javascript"></script>
 
 
-本站勉强运行:<span id="sitetime" style="color:#096"></span>
-<script>
-function siteTime(){
-window.setTimeout("siteTime()", 1000);
-var seconds = 1000
-var minutes = seconds * 60
-var hours = minutes * 60
-var days = hours * 24
-var years = days * 365
-var today = new Date()
-var todayYear = today.getFullYear()
-var todayMonth = today.getMonth()
-var todayDate = today.getDate()
-var todayHour = today.getHours()
-var todayMinute = today.getMinutes()
-var todaySecond = today.getSeconds()
-var t1 = Date.UTC(2024,8,4,10,0,0)
-var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
-var diff = t2-t1
-var diffYears = Math.floor(diff/years)
-var diffDays = Math.floor((diff/days)-diffYears*365)
-var diffHours =Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
-var diffMinutes =Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
-var diffSeconds =Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)
-document.getElementById("sitetime").innerHTML=""+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"
-}
-siteTime()
-</script>
+        本站勉强运行:<span id=span_dt_dt style="color: #2F889A;"></span>
+        <script language=javascript>
+        function show_date_time(){
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay=new Date("8/4/2024 10:00:00");
+        today=new Date();
+        timeold=(today.getTime()-BirthDay.getTime());
+        sectimeold=timeold/1000
+        secondsold=Math.floor(sectimeold);
+        msPerDay=24*60*60*1000
+        e_daysold=timeold/msPerDay
+        daysold=Math.floor(e_daysold);
+        e_hrsold=(e_daysold-daysold)*24;
+        hrsold=Math.floor(e_hrsold);
+        e_minsold=(e_hrsold-hrsold)*60;
+        minsold=Math.floor((e_hrsold-hrsold)*60);
+        seconds=Math.floor((e_minsold-minsold)*60);
+        span_dt_dt.innerHTML='<font style=color:#C40000>'+daysold+'</font> 天 <font style=color:#C40000>'+hrsold+'</font> 时 <font style=color:#C40000>'+minsold+'</font> 分 <font style=color:#C40000>'+seconds+'</font> 秒';
+        }
+        show_date_time();
+        </script>
+
 
 
     
