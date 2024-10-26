@@ -368,7 +368,7 @@
     <script defer data-domain="syxsyx.us.kg" src="https://plausible.io/js/script.js"></script>
     <meta name="rs-site-verification" content="huoeclriajkafmeq" />
 </head>
-<body>  
+<body oncontextmenu="return false;">  
     <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
     
     <div class="satic-area">
@@ -873,7 +873,11 @@
     <script src="timeGone.js"></script>
     <!-- 引入不蒜子计数 -->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
 </body>
 
 
