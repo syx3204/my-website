@@ -298,8 +298,70 @@
             margin-top: 10px;
         }
 
-        <!-- 评论模块 -->
-
+        <!-- 人机验证 -->
+        .body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .captcha-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none; /* 初始状态下隐藏 */
+        }
+        .captcha-container.show {
+            display: block; /* 显示验证码容器 */
+        }
+        #captchaImage {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            user-select: none; /* 禁用文本选择 */
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 10px;
+            color: red;
+        }
+        #comment {
+            display: none; /* 初始状态下隐藏 */
+            border-radius: 10px;
+            background-color: #ffffff86;
+            border: 2px solid #ffffff86;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
     </style>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -633,20 +695,64 @@
         </center>
 
         <a href="https://syxsyx.us.kg/test.html">测试网页</a>
-        <!-- 评论模块 -->
-        <div id="comment" style="border-radius: 10px; background-color: #ffffff86; border: 2px solid #ffffff86; padding: 10px; margin-top: 20px; margin-bottom: 20px;">
-        <div id="tcomment"></div>
-        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.9/dist/twikoo.all.min.js"></script>
-        <script>
-        twikoo.init({
-            envId: 'https://myproject.us.kg/', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-            el: '#tcomment', // 容器元素
-            // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-            //path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-            lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
-        })
-        </script>
-        </div>
+
+
+
+        <!--以下包含人机验证和评论-->
+        <div id="captchaContainer" class="captcha-container show">
+                <div id="captchaImage" onclick="generateCaptcha()"></div>
+                <input type="text" id="captchaInput" placeholder="请输入验证码">
+                <button onclick="validateCaptcha()">提交</button>
+                <p id="result"></p>
+            </div>
+        
+            <!-- 评论模块 -->
+            <div id="comment">
+                <div id="tcomment"></div>
+                <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.9/dist/twikoo.all.min.js"></script>
+                <script>
+                    twikoo.init({
+                        envId: 'https://myproject.us.kg/', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+                        el: '#tcomment', // 容器元素
+                        lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
+                    });
+                </script>
+            </div>
+        
+            <script>
+                let captchaText = '';
+        
+                function generateCaptcha() {
+                    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                    let captcha = '';
+                    for (let i = 0; i < 6; i++) {
+                        captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+                    }
+                    captchaText = captcha;
+                    document.getElementById('captchaImage').innerText = captcha;
+                    document.getElementById('result').innerText = ''; // 清除之前的验证结果
+                }
+        
+                function validateCaptcha() {
+                    const userInput = document.getElementById('captchaInput').value;
+                    if (userInput === captchaText) {
+                        document.getElementById('captchaContainer').classList.remove('show'); // 隐藏验证码容器
+                        document.getElementById('comment').style.display = 'block'; // 显示评论模块
+                    } else {
+                        document.getElementById('result').innerText = '验证码错误，请重试。';
+                        generateCaptcha(); // 重新生成新的验证码
+                    }
+                }
+        
+                // 初始化验证码
+                generateCaptcha();
+        
+                // 禁用右键点击和文本选择
+                document.getElementById('captchaImage').oncontextmenu = function() { return false; };
+                document.getElementById('captchaImage').onselectstart = function() { return false; };
+            </script>
+
+        <!--至此模块结束-->
         
         
         
