@@ -716,17 +716,17 @@
             </div>
         
             <!-- 评论模块 -->
-
-        <div id="waline"></div>
-        <script type="module">
-        import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-        
-        init({
-            el: '#waline',
-            serverURL: 'https://your-domain.vercel.app',
-        });
-        </script>
-
+        <div id='comment'>
+            <div id="waline"></div>
+            <script type="module">
+            import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+            
+            init({
+                el: '#waline',
+                serverURL: 'https://your-domain.vercel.app',
+            });
+            </script>
+        </div>
         
             <script>
                 let captchaText = '';
