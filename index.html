@@ -367,6 +367,15 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script defer data-domain="syxsyx.us.kg" src="https://plausible.io/js/script.js"></script>
     <meta name="rs-site-verification" content="huoeclriajkafmeq" />
+
+
+
+
+    
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/@waline/client@v3/dist/waline.css"
+    />
 </head>
 <body oncontextmenu="return false;">  
     <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
@@ -707,17 +716,17 @@
             </div>
         
             <!-- 评论模块 -->
-            <div id="comment">
-                <div id="tcomment"></div>
-                <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.9/dist/twikoo.all.min.js"></script>
-                <script>
-                    twikoo.init({
-                        envId: 'https://myproject.us.kg/', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-                        el: '#tcomment', // 容器元素
-                        lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
-                    });
-                </script>
-            </div>
+
+        <div id="waline"></div>
+        <script type="module">
+        import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        
+        init({
+            el: '#waline',
+            serverURL: 'https://your-domain.vercel.app',
+        });
+        </script>
+
         
             <script>
                 let captchaText = '';
