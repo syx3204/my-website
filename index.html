@@ -376,6 +376,11 @@
         rel="stylesheet"
         href="https://unpkg.com/@waline/client@v3/dist/waline.css"
     />
+    <!-- Meta 图标 (可选) -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/@waline/client@v3/dist/waline-meta.css"
+    />
 </head>
 <body oncontextmenu="return false;">  
     <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
@@ -406,7 +411,7 @@
        
         <div id="lxw" style="margin-bottom: 20px; padding: 10px; width: 300px;">
             <h2 style="color: #ffffff; text-align: center;">联系我</h2>
-            <a href="https://github.com/syx3204/syx3204.github.io" target="_blank">
+            <a href="https://github.com/syx3204/my-website" target="_blank">
                 <img src="联系我/github (1).svg" alt="My github">
                 <p style="color: rgb(255, 255, 255);">在GitHub上找到用于搭建此网站的存储库。</p>
             </a> 
@@ -798,17 +803,6 @@
         <!-- surprise -->
         <audio id="sound" src="surprise/surprise.mp3" preload="auto" style="display: none;"></audio>
         <script src="surprise/script.js"></script>
-        
-        <!--valine-->
-
-        <div id="vcomments"></div>
-        <script>
-            new Valine({
-                el: '#vcomments',
-                appId: 'IMTv2O2uVjZroRfeGpEMxBMd-MdYXbMMI',
-                appKey: 'kSCZ7S3mucRmVDeH1I3lBf6h'
-            })
-        </script>
 
 
         
